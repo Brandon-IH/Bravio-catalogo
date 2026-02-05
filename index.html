@@ -99,7 +99,9 @@
         <!-- Hero -->
         <header id="inicio" class="relative h-[70vh] flex items-center justify-center text-white overflow-hidden">
             <div class="absolute inset-0 bg-stone-900">
-                <img src="https://images.unsplash.com/photo-1473188588955-71954948c537?auto=format&fit=crop&w=1600&q=80" 
+                <!-- Imagen Hero local: cámbiala por la tuya en la carpeta img -->
+                <img src="img/hero-piel.jpg" 
+                     onerror="this.src='https://images.unsplash.com/photo-1473188588955-71954948c537?auto=format&fit=crop&w=1600&q=80'"
                      alt="Fajos de piel Bravio" class="w-full h-full object-cover opacity-60">
                 <div class="absolute inset-0 bg-gradient-to-b from-stone-950/20 to-stone-950/90"></div>
             </div>
@@ -117,11 +119,12 @@
         <section id="nosotros" class="py-28 px-4 max-w-7xl mx-auto">
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1598251266014-934d40e1b20c?auto=format&fit=crop&w=800&q=80" 
+                    <img src="img/nosotros.jpg" 
+                         onerror="this.src='https://images.unsplash.com/photo-1598251266014-934d40e1b20c?auto=format&fit=crop&w=800&q=80'"
                          alt="Proceso artesanal Bravio" class="rounded-[2.5rem] shadow-2xl object-cover h-[500px] w-full">
                     <div class="absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-2xl hidden lg:block border border-stone-100 text-center">
-                        <p class="text-amber-900 font-bold text-2xl font-serif italic uppercase leading-none text-center">Bravio</p>
-                        <p class="text-stone-500 text-[10px] tracking-widest uppercase mt-2 text-center">Piel de Calidad</p>
+                        <p class="text-amber-900 font-bold text-2xl font-serif italic uppercase leading-none">Bravio</p>
+                        <p class="text-stone-500 text-[10px] tracking-widest uppercase mt-2">Piel de Calidad</p>
                     </div>
                 </div>
                 <div>
@@ -175,7 +178,7 @@
             </div>
         </section>
 
-        <!-- Contacto Simplificado y Funcional -->
+        <!-- Contacto -->
         <section id="contacto" class="py-28 px-4 max-w-7xl mx-auto">
             <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden grid lg:grid-cols-5 border border-stone-100">
                 <div class="lg:col-span-2 bg-amber-900 p-12 text-white flex flex-col justify-between">
@@ -271,13 +274,17 @@
     </footer>
 
     <script>
+        /* DATOS DE PRODUCTO CON IMÁGENES LOCALES
+           Asegúrate de crear una carpeta llamada 'img' en tu repositorio de GitHub
+           y nombrar tus fotos exactamente como se indica abajo.
+        */
         const products = [
-            { id: 1, name: "Bravio Vaquero Bordado", category: "Vaquero", price: 1250, desc: "Bordado artesanal de alta densidad sobre piel de res genuina de primera.", img: "https://images.unsplash.com/photo-1624222247344-550fb8ecf7c4?auto=format&fit=crop&w=800&q=80" },
-            { id: 2, name: "Bravio Ejecutivo Black", category: "Formal", price: 850, desc: "Minimalismo y distinción. Piel de grano entero con hebilla de níquel cepillado.", img: "https://images.unsplash.com/photo-1549439602-43ebcb2327af?auto=format&fit=crop&w=800&q=80" },
-            { id: 3, name: "Bravio Avestruz Brown", category: "Exótico", price: 2800, desc: "Textura característica de avestruz en piel genuina seleccionada.", img: "https://images.unsplash.com/photo-1590673885210-1df1632344a8?auto=format&fit=crop&w=800&q=80" },
-            { id: 4, name: "Bravio Casual Miel", category: "Formal", price: 690, desc: "Versatilidad diaria. Tono miel natural que desarrolla pátina con el tiempo.", img: "https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?auto=format&fit=crop&w=800&q=80" },
-            { id: 5, name: "Bravio Cincelado", category: "Vaquero", price: 1450, desc: "Grabado a mano con motivos tradicionales sobre piel de alta resistencia.", img: "https://images.unsplash.com/photo-1614165933396-981888062822?auto=format&fit=crop&w=800&q=80" },
-            { id: 6, name: "Bravio Croco Legacy", category: "Exótico", price: 3500, desc: "Relieve táctil de lujo tipo cocodrilo con acabado en ceras artesanales.", img: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=800&q=80" },
+            { id: 1, name: "Bravio Vaquero Bordado", category: "Vaquero", price: 1250, desc: "Este modelo presenta un bordado de alta densidad sobre piel de res genuina de primera.", img: "img/vaquero-bordado.jpg" },
+            { id: 2, name: "Bravio Ejecutivo Black", category: "Formal", price: 850, desc: "Minimalismo y distinción. Piel de grano entero con hebilla de níquel cepillado.", img: "img/ejecutivo-negro.jpg" },
+            { id: 3, name: "Bravio Avestruz Brown", category: "Exótico", price: 2800, desc: "Textura característica de avestruz en piel genuina seleccionada.", img: "img/avestruz-cafe.jpg" },
+            { id: 4, name: "Bravio Casual Miel", category: "Formal", price: 690, desc: "Versatilidad diaria. Tono miel natural que desarrolla pátina con el tiempo.", img: "img/casual-miel.jpg" },
+            { id: 5, name: "Bravio Cincelado Tradicional", category: "Vaquero", price: 1450, desc: "Grabado a mano con motivos tradicionales sobre piel de alta resistencia.", img: "img/cincelado.jpg" },
+            { id: 6, name: "Bravio Croco Legacy", category: "Exótico", price: 3500, desc: "Relieve táctil de lujo tipo cocodrilo con acabado en ceras artesanales.", img: "img/cocodrilo-legacy.jpg" },
         ];
 
         const homeView = document.getElementById('home-view');
@@ -301,18 +308,13 @@
 
         let currentCategory = 'all';
 
-        /* Función de Validación Ajustada */
+        /* Validación ajustada */
         function validateEmail(email) {
             const val = String(email).toLowerCase().trim();
-            
-            // Regex estándar profesional: permite múltiples subdominios (.com.mx)
             const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             if (!re.test(val)) return { valid: false, msg: "Formato no válido (ej@mail.com)" };
-
-            // Bloquear solo errores de dedo críticos (.con, .gmial, etc)
             if (val.endsWith('.con')) return { valid: false, msg: "Revisa la extensión (.com)" };
             if (val.includes('@gmal.') || val.includes('@gmial.')) return { valid: false, msg: "Revisa la escritura de Gmail" };
-
             return { valid: true };
         }
 
@@ -364,6 +366,10 @@
                 const product = products.find(p => p.id === productId);
                 if (product) {
                     document.getElementById('detail-img').src = product.img;
+                    // Fallback si la imagen local no existe aún
+                    document.getElementById('detail-img').onerror = function() {
+                        this.src = 'https://images.unsplash.com/photo-1549439602-43ebcb2327af?auto=format&fit=crop&w=800&q=80';
+                    };
                     document.getElementById('detail-name').innerText = product.name;
                     document.getElementById('detail-category').innerText = product.category;
                     document.getElementById('detail-price').innerText = `$${product.price.toLocaleString()}`;
@@ -395,7 +401,9 @@
                     productGrid.innerHTML += `
                         <div class="product-card bg-white rounded-[2rem] shadow-sm border border-stone-100 overflow-hidden group flex flex-col cursor-pointer h-full" onclick="showView('detail', ${p.id})">
                             <div class="h-64 overflow-hidden relative">
-                                <img src="${p.img}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
+                                <img src="${p.img}" 
+                                     onerror="this.src='https://images.unsplash.com/photo-1624222247344-550fb8ecf7c4?auto=format&fit=crop&w=800&q=80'"
+                                     alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
                                 <span class="absolute top-4 right-4 bg-amber-900 text-white text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">${p.category}</span>
                             </div>
                             <div class="p-8 flex flex-col flex-grow">
