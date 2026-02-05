@@ -22,7 +22,6 @@
         .fade-in { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
-        /* Estilos de navegación */
         .nav-link {
             position: relative;
             transition: color 0.3s ease;
@@ -41,9 +40,10 @@
             width: 100%;
         }
 
-        /* Estilos para inputs inválidos */
-        input:invalid:not(:placeholder-shown) {
-            border-color: #ef4444;
+        /* Estilos de validación */
+        .input-error {
+            border-color: #ef4444 !important;
+            background-color: #fef2f2 !important;
         }
     </style>
 </head>
@@ -53,7 +53,6 @@
     <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
-                <!-- Logo -->
                 <div class="flex items-center gap-3 cursor-pointer group" onclick="showView('home')">
                     <div class="bg-amber-900 p-2.5 rounded-xl text-amber-100 group-hover:bg-amber-800 transition-colors shadow-lg shadow-amber-900/10">
                         <i class="fas fa-bullhorn text-xl"></i>
@@ -61,7 +60,6 @@
                     <span class="font-bold text-2xl text-amber-900 font-serif tracking-tight uppercase">Bravio</span>
                 </div>
 
-                <!-- Menú Desktop -->
                 <div class="hidden md:flex items-center space-x-10 font-semibold text-stone-600">
                     <button onclick="showView('home')" class="nav-link hover:text-amber-900">Inicio</button>
                     <a href="#nosotros" class="nav-link hover:text-amber-900">Nosotros</a>
@@ -71,7 +69,6 @@
                     </a>
                 </div>
 
-                <!-- Menú Móvil Icono -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-toggle" class="text-stone-600 hover:text-amber-900 focus:outline-none p-2">
                         <i class="fas fa-bars text-2xl"></i>
@@ -80,7 +77,6 @@
             </div>
         </div>
         
-        <!-- Dropdown Menú Móvil -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-100 px-4 py-4 space-y-4 shadow-xl">
             <button onclick="showView('home'); toggleMobileMenu()" class="block w-full text-left font-bold text-stone-800">Inicio</button>
             <a href="#nosotros" onclick="toggleMobileMenu()" class="block font-bold text-stone-800">Nosotros</a>
@@ -116,7 +112,7 @@
                          alt="Proceso artesanal Bravio" class="rounded-[2.5rem] shadow-2xl object-cover h-[500px] w-full">
                     <div class="absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-2xl hidden lg:block border border-stone-100">
                         <p class="text-amber-900 font-bold text-2xl font-serif italic uppercase text-center leading-none">Bravio</p>
-                        <p class="text-stone-500 text-[10px] tracking-widest uppercase mt-2 text-center">Piel Genuina</p>
+                        <p class="text-stone-500 text-[10px] tracking-widest uppercase mt-2 text-center">Piel de Calidad</p>
                     </div>
                 </div>
                 <div>
@@ -170,13 +166,13 @@
             </div>
         </section>
 
-        <!-- Contacto con Validaciones -->
+        <!-- Contacto con Validaciones Estrictas -->
         <section id="contacto" class="py-28 px-4 max-w-7xl mx-auto">
             <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden grid lg:grid-cols-5 border border-stone-100">
                 <div class="lg:col-span-2 bg-amber-900 p-12 text-white flex flex-col justify-between">
                     <div>
                         <h3 class="text-4xl font-bold mb-8 font-serif italic">Hablemos de Piel</h3>
-                        <p class="mb-10 text-amber-100">¿Tienes dudas o buscas pedidos al mayoreo? Déjanos un mensaje y te responderemos a la brevedad.</p>
+                        <p class="mb-10 text-amber-100 leading-relaxed">¿Dudas o pedidos especiales? Déjanos un mensaje con tus datos correctos para contactarte.</p>
                         <ul class="space-y-8">
                             <li class="flex items-center gap-5"><i class="fas fa-phone text-amber-400"></i> +52 33 3482 1147</li>
                             <li class="flex items-center gap-4"><i class="fas fa-envelope text-amber-400"></i> contacto@bravio.com</li>
@@ -189,28 +185,31 @@
                         <div class="grid md:grid-cols-2 gap-8">
                             <div class="space-y-2">
                                 <label class="text-xs font-bold uppercase tracking-widest text-stone-400">Nombre Completo</label>
-                                <input type="text" name="nombre" required placeholder="Tu nombre" class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 transition-all">
+                                <input type="text" name="nombre" id="nombreInput" required placeholder="Tu nombre" class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 transition-all">
                             </div>
                             <div class="space-y-2">
                                 <label class="text-xs font-bold uppercase tracking-widest text-stone-400">Correo Electrónico</label>
-                                <input type="email" 
-                                       id="emailInput"
-                                       name="_replyto" 
-                                       required 
-                                       placeholder="tu@email.com" 
-                                       pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                                       class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 transition-all">
+                                <div class="relative">
+                                    <input type="email" 
+                                           id="emailInput"
+                                           name="_replyto" 
+                                           required 
+                                           placeholder="ejemplo@correo.com" 
+                                           class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 transition-all">
+                                    <i id="emailStatusIcon" class="fas fa-check-circle absolute right-4 top-1/2 -translate-y-1/2 text-green-500 hidden"></i>
+                                </div>
                                 <p id="emailErrorMessage" class="hidden text-red-500 text-[10px] font-bold uppercase mt-1 ml-1">
-                                    <i class="fas fa-exclamation-circle mr-1"></i> Por favor, ingresa un correo válido
+                                    <i class="fas fa-exclamation-circle mr-1"></i> Formato de correo no válido (ej@mail.com)
                                 </p>
                             </div>
                         </div>
                         <div class="space-y-2">
                             <label class="text-xs font-bold uppercase tracking-widest text-stone-400">Mensaje</label>
-                            <textarea name="mensaje" rows="5" required placeholder="¿En qué podemos ayudarte?" class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 resize-none transition-all"></textarea>
+                            <textarea name="mensaje" id="mensajeInput" rows="5" required placeholder="¿En qué podemos ayudarte?" class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 resize-none transition-all"></textarea>
                         </div>
-                        <button type="submit" id="submitBtn" class="w-full bg-amber-900 text-white font-bold py-5 rounded-2xl hover:bg-amber-800 transition-all uppercase tracking-[0.2em] shadow-xl disabled:opacity-50 disabled:cursor-not-allowed">
-                            Enviar Mensaje Seguro
+                        <button type="submit" id="submitBtn" class="w-full bg-amber-900 text-white font-bold py-5 rounded-2xl hover:bg-amber-800 transition-all uppercase tracking-[0.2em] shadow-xl flex items-center justify-center gap-2 group disabled:bg-stone-300 disabled:shadow-none">
+                            <span id="btnText">Enviar Mensaje Seguro</span>
+                            <i id="btnIcon" class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
                         </button>
                     </form>
                 </div>
@@ -264,12 +263,12 @@
 
     <script>
         const products = [
-            { id: 1, name: "Bravio Vaquero Bordado", category: "Vaquero", price: 1250, desc: "Este modelo presenta un bordado de alta densidad realizado por manos expertas sobre piel de res genuina tratada con aceites naturales.", img: "https://images.unsplash.com/photo-1624222247344-550fb8ecf7c4?auto=format&fit=crop&w=800&q=80" },
-            { id: 2, name: "Bravio Ejecutivo Black", category: "Formal", price: 850, desc: "Elegancia minimalista. Piel de grano entero con acabado liso premium y hebilla de perfil bajo para trajes de etiqueta.", img: "https://images.unsplash.com/photo-1549439602-43ebcb2327af?auto=format&fit=crop&w=800&q=80" },
-            { id: 3, name: "Bravio Avestruz Brown", category: "Exótico", price: 2800, desc: "Un fajo de distinción absoluta. El patrón de avestruz seleccionado sobre piel de primera calidad ofrece una textura única y un color profundo.", img: "https://images.unsplash.com/photo-1590673885210-1df1632344a8?auto=format&fit=crop&w=800&q=80" },
-            { id: 4, name: "Bravio Casual Miel", category: "Formal", price: 690, desc: "Tono miel natural, ideal para uso diario. Una pieza versátil que desarrolla una pátina hermosa con el paso del tiempo.", img: "https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?auto=format&fit=crop&w=800&q=80" },
-            { id: 5, name: "Bravio Cincelado", category: "Vaquero", price: 1450, desc: "Grabado profundo a mano con motivos tradicionales del campo mexicano sobre piel de alta resistencia.", img: "https://images.unsplash.com/photo-1614165933396-981888062822?auto=format&fit=crop&w=800&q=80" },
-            { id: 6, name: "Bravio Croco Legacy", category: "Exótico", price: 3500, desc: "Relieve táctil de piel tipo cocodrilo con acabado en ceras de lujo para una durabilidad superior.", img: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=800&q=80" },
+            { id: 1, name: "Bravio Vaquero Bordado", category: "Vaquero", price: 1250, desc: "Bordado artesanal de alta densidad sobre piel de res genuina de primera.", img: "https://images.unsplash.com/photo-1624222247344-550fb8ecf7c4?auto=format&fit=crop&w=800&q=80" },
+            { id: 2, name: "Bravio Ejecutivo Black", category: "Formal", price: 850, desc: "Minimalismo y distinción. Piel de grano entero con hebilla de níquel cepillado.", img: "https://images.unsplash.com/photo-1549439602-43ebcb2327af?auto=format&fit=crop&w=800&q=80" },
+            { id: 3, name: "Bravio Avestruz Brown", category: "Exótico", price: 2800, desc: "Textura característica de avestruz en piel genuina seleccionada.", img: "https://images.unsplash.com/photo-1590673885210-1df1632344a8?auto=format&fit=crop&w=800&q=80" },
+            { id: 4, name: "Bravio Casual Miel", category: "Formal", price: 690, desc: "Versatilidad diaria. Tono miel natural que desarrolla pátina con el tiempo.", img: "https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?auto=format&fit=crop&w=800&q=80" },
+            { id: 5, name: "Bravio Cincelado", category: "Vaquero", price: 1450, desc: "Grabado a mano con motivos tradicionales sobre piel de alta resistencia.", img: "https://images.unsplash.com/photo-1614165933396-981888062822?auto=format&fit=crop&w=800&q=80" },
+            { id: 6, name: "Bravio Croco Legacy", category: "Exótico", price: 3500, desc: "Relieve táctil de lujo tipo cocodrilo con acabado en ceras artesanales.", img: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=800&q=80" },
         ];
 
         const homeView = document.getElementById('home-view');
@@ -281,31 +280,64 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileToggle = document.getElementById('mobile-menu-toggle');
 
-        /* Referencias para validación de correo */
+        /* Referencias de validación */
         const contactForm = document.getElementById('contactForm');
         const emailInput = document.getElementById('emailInput');
         const emailErrorMessage = document.getElementById('emailErrorMessage');
+        const emailStatusIcon = document.getElementById('emailStatusIcon');
         const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnIcon = document.getElementById('btnIcon');
 
         let currentCategory = 'all';
 
-        /* Validación de Correo en Tiempo Real */
-        emailInput.addEventListener('input', () => {
-            const isValid = emailInput.checkValidity();
-            if (!isValid && emailInput.value !== "") {
+        /* Función de Validación Estricta con Regex */
+        function validateEmail(email) {
+            // Regex más estricto: exige usuario@dominio.extension (mínimo 2 letras en la extensión)
+            const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function updateFormStatus() {
+            const emailValue = emailInput.value.trim();
+            const isValid = validateEmail(emailValue);
+
+            if (emailValue === "") {
+                emailErrorMessage.classList.add('hidden');
+                emailStatusIcon.classList.add('hidden');
+                emailInput.classList.remove('input-error');
+                submitBtn.disabled = false;
+                btnIcon.className = "fas fa-paper-plane";
+            } else if (!isValid) {
                 emailErrorMessage.classList.remove('hidden');
+                emailStatusIcon.classList.add('hidden');
+                emailInput.classList.add('input-error');
                 submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-50');
+                btnIcon.className = "fas fa-times-circle";
+                btnText.innerText = "Correo no válido";
             } else {
                 emailErrorMessage.classList.add('hidden');
+                emailStatusIcon.classList.remove('hidden');
+                emailInput.classList.remove('input-error');
                 submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50');
+                btnIcon.className = "fas fa-check-circle";
+                btnText.innerText = "Enviar Mensaje Seguro";
             }
-        });
+        }
 
-        /* Prevenir envío si es inválido */
+        emailInput.addEventListener('input', updateFormStatus);
+        emailInput.addEventListener('blur', updateFormStatus);
+
+        /* Prevenir envío final si algo está mal */
         contactForm.addEventListener('submit', (e) => {
-            if (!emailInput.checkValidity()) {
+            if (!validateEmail(emailInput.value.trim())) {
                 e.preventDefault();
-                emailErrorMessage.classList.remove('hidden');
+                updateFormStatus();
+            } else {
+                btnText.innerText = "Enviando...";
+                submitBtn.disabled = true;
             }
         });
 
@@ -322,7 +354,7 @@
                     document.getElementById('detail-category').innerText = product.category;
                     document.getElementById('detail-price').innerText = `$${product.price.toLocaleString()}`;
                     document.getElementById('detail-desc').innerText = product.desc;
-                    document.getElementById('whatsapp-link').href = `https://wa.me/523334821147?text=Hola Bravio! Me interesa el modelo ${product.name} que vi en su web.`;
+                    document.getElementById('whatsapp-link').href = `https://wa.me/523334821147?text=Hola Bravio! Me interesa el modelo ${product.name} que vi en su catálogo web.`;
                     
                     homeView.classList.add('view-hidden');
                     detailView.classList.remove('view-hidden');
