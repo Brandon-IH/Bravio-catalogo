@@ -56,28 +56,31 @@
         }
     </style>
 </head>
-<body class="bg-stone-50 text-stone-900 overflow-x-hidden min-h-screen flex flex-col">
+<body class="bg-stone-50 text-stone-900 overflow-x-hidden min-h-screen flex flex-col font-sans">
 
     <!-- Navegación Superior -->
     <nav class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
                 <div class="flex items-center gap-3 cursor-pointer group" onclick="showView('home')">
-                    <div class="bg-amber-900 p-2.5 rounded-xl text-amber-100 group-hover:bg-amber-800 transition-colors shadow-lg shadow-amber-900/10">
+                    <div class="bg-amber-900 p-2.5 rounded-xl text-amber-100 group-hover:bg-amber-800 transition-colors shadow-lg">
                         <i class="fas fa-bullhorn text-xl"></i>
                     </div>
                     <span class="font-bold text-2xl text-amber-900 font-serif tracking-tight uppercase">Bravio</span>
                 </div>
 
+                <!-- Menú Desktop -->
                 <div class="hidden md:flex items-center space-x-10 font-semibold text-stone-600">
                     <button onclick="showView('home')" class="nav-link hover:text-amber-900">Inicio</button>
                     <a href="#nosotros" class="nav-link hover:text-amber-900">Nosotros</a>
                     <a href="#catalogo" class="nav-link hover:text-amber-900">Catálogo</a>
-                    <a href="#contacto" class="bg-amber-900 text-white px-7 py-2.5 rounded-full hover:bg-amber-800 transition-all shadow-md hover:shadow-lg active:scale-95">
+                    <a href="#contacto" class="bg-amber-900 text-white px-7 py-2.5 rounded-full hover:bg-amber-800 transition-all shadow-md active:scale-95">
                         Contacto
                     </a>
                 </div>
 
+                <!-- Menú Móvil -->
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-toggle" class="text-stone-600 hover:text-amber-900 focus:outline-none p-2">
                         <i class="fas fa-bars text-2xl"></i>
@@ -94,20 +97,18 @@
         </div>
     </nav>
 
-    <!-- VISTA PRINCIPAL -->
     <main id="home-view" class="fade-in">
         <!-- Hero -->
         <header id="inicio" class="relative h-[70vh] flex items-center justify-center text-white overflow-hidden">
             <div class="absolute inset-0 bg-stone-900">
-                <!-- Imagen Hero local: cámbiala por la tuya en la carpeta img -->
-                <img src="img/hero-piel.jpg" 
-                     onerror="this.src='https://images.unsplash.com/photo-1473188588955-71954948c537?auto=format&fit=crop&w=1600&q=80'"
+                <img src="img/hero.jpg" 
+                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1473188588955-71954948c537?auto=format&fit=crop&w=1600&q=80'"
                      alt="Fajos de piel Bravio" class="w-full h-full object-cover opacity-60">
                 <div class="absolute inset-0 bg-gradient-to-b from-stone-950/20 to-stone-950/90"></div>
             </div>
             <div class="relative z-10 text-center px-4 max-w-4xl">
                 <span class="uppercase tracking-[0.4em] text-amber-400 font-bold text-sm mb-4 block">Carácter en cada detalle</span>
-                <h1 class="text-5xl md:text-8xl font-bold mb-6 tracking-tight text-white">Bravio <br><span class="italic text-amber-200">Piel Genuina</span></h1>
+                <h1 class="text-5xl md:text-8xl font-bold mb-6 tracking-tight text-white leading-none">Bravio <br><span class="italic text-amber-200">Piel Genuina</span></h1>
                 <p class="text-lg md:text-xl text-stone-200 mx-auto mb-10 font-light leading-relaxed">Artesanía que impone respeto. Fajos diseñados para durar toda la vida.</p>
                 <div class="flex flex-wrap justify-center gap-4">
                     <a href="#catalogo" class="bg-amber-600 hover:bg-amber-500 text-white font-bold px-12 py-4 rounded-full transition-all shadow-2xl hover:scale-105">Ver Catálogo</a>
@@ -120,11 +121,11 @@
             <div class="grid md:grid-cols-2 gap-16 items-center">
                 <div class="relative">
                     <img src="img/nosotros.jpg" 
-                         onerror="this.src='https://images.unsplash.com/photo-1598251266014-934d40e1b20c?auto=format&fit=crop&w=800&q=80'"
-                         alt="Proceso artesanal Bravio" class="rounded-[2.5rem] shadow-2xl object-cover h-[500px] w-full">
+                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1598251266014-934d40e1b20c?auto=format&fit=crop&w=800&q=80'"
+                         alt="Proceso artesanal" class="rounded-[2.5rem] shadow-2xl object-cover h-[500px] w-full">
                     <div class="absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-2xl hidden lg:block border border-stone-100 text-center">
-                        <p class="text-amber-900 font-bold text-2xl font-serif italic uppercase leading-none">Bravio</p>
-                        <p class="text-stone-500 text-[10px] tracking-widest uppercase mt-2">Piel de Calidad</p>
+                        <p class="text-amber-900 font-bold text-2xl font-serif italic uppercase text-center leading-none">Bravio</p>
+                        <p class="text-stone-500 text-[10px] tracking-widest uppercase mt-2 text-center">Piel de Calidad</p>
                     </div>
                 </div>
                 <div>
@@ -170,7 +171,9 @@
                     </div>
                 </div>
 
-                <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10"></div>
+                <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+                    <!-- Los productos se inyectarán con JS -->
+                </div>
                 <div id="noResults" class="hidden text-center py-20 text-stone-400">
                     <i class="fas fa-search text-4xl mb-4"></i>
                     <p class="text-xl">No encontramos resultados para tu búsqueda.</p>
@@ -202,12 +205,7 @@
                             <div class="space-y-2">
                                 <label class="text-xs font-bold uppercase tracking-widest text-stone-400 ml-1">Correo Electrónico</label>
                                 <div class="relative">
-                                    <input type="email" 
-                                           id="emailInput"
-                                           name="_replyto" 
-                                           required 
-                                           placeholder="ejemplo@correo.com" 
-                                           class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 transition-all">
+                                    <input type="email" id="emailInput" name="_replyto" required placeholder="ejemplo@correo.com" class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 transition-all">
                                     <i id="emailStatusIcon" class="fas fa-check-circle absolute right-4 top-1/2 -translate-y-1/2 text-green-500 hidden"></i>
                                 </div>
                                 <p id="emailErrorMessage" class="hidden text-red-500 text-[10px] font-bold uppercase mt-1 ml-1 leading-tight">
@@ -219,9 +217,9 @@
                             <label class="text-xs font-bold uppercase tracking-widest text-stone-400 ml-1">¿En qué podemos ayudarte?</label>
                             <textarea name="mensaje" id="mensajeInput" rows="5" required placeholder="Describe tu consulta..." class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 resize-none transition-all"></textarea>
                         </div>
-                        <button type="submit" id="submitBtn" class="w-full bg-amber-900 text-white font-bold py-5 rounded-2xl hover:bg-amber-800 transition-all uppercase tracking-[0.2em] shadow-xl flex items-center justify-center gap-2 group active:scale-95 disabled:bg-stone-300 disabled:cursor-not-allowed">
+                        <button type="submit" id="submitBtn" class="w-full bg-amber-900 text-white font-bold py-5 rounded-2xl hover:bg-amber-800 transition-all uppercase tracking-[0.2em] shadow-xl flex items-center justify-center gap-2 group active:scale-95 disabled:bg-stone-300" disabled>
                             <span id="btnText">Enviar Mensaje Seguro</span>
-                            <i id="btnIcon" class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
+                            <i id="btnIcon" class="fas fa-paper-plane"></i>
                         </button>
                     </form>
                 </div>
@@ -236,12 +234,12 @@
                 <i class="fas fa-arrow-left"></i> Volver al Catálogo
             </button>
             <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden grid md:grid-cols-2 gap-12 border border-stone-100 p-6">
-                <div class="h-[600px] rounded-[2rem] overflow-hidden bg-stone-100">
+                <div class="h-[600px] rounded-[2rem] overflow-hidden bg-stone-100 shadow-inner text-center">
                     <img id="detail-img" src="" alt="" class="w-full h-full object-cover">
                 </div>
                 <div class="flex flex-col justify-center">
                     <span id="detail-category" class="text-amber-700 font-bold uppercase text-[10px] mb-4 block tracking-widest"></span>
-                    <h2 id="detail-name" class="text-5xl font-bold mb-6 text-stone-900 tracking-tight"></h2>
+                    <h2 id="detail-name" class="text-5xl font-bold mb-6 text-stone-900 tracking-tight leading-tight"></h2>
                     <p id="detail-price" class="text-4xl font-bold text-amber-900 mb-10"></p>
                     
                     <div class="mb-10 space-y-4">
@@ -253,7 +251,7 @@
                         <a href="#" id="whatsapp-link" target="_blank" class="bg-green-600 hover:bg-green-700 text-white font-bold py-5 rounded-2xl shadow-xl transition-all flex items-center justify-center gap-3 active:scale-95">
                             <i class="fab fa-whatsapp text-2xl"></i> Consultar por WhatsApp
                         </a>
-                        <button onclick="showView('home')" class="bg-stone-100 text-stone-800 font-bold py-5 rounded-2xl transition-all uppercase tracking-widest text-xs">Cerrar</button>
+                        <button onclick="showView('home')" class="bg-stone-100 text-stone-800 font-bold py-5 rounded-2xl transition-all uppercase tracking-widest text-xs hover:bg-stone-200">Cerrar</button>
                     </div>
                 </div>
             </div>
@@ -274,17 +272,14 @@
     </footer>
 
     <script>
-        /* DATOS DE PRODUCTO CON IMÁGENES LOCALES
-           Asegúrate de crear una carpeta llamada 'img' en tu repositorio de GitHub
-           y nombrar tus fotos exactamente como se indica abajo.
-        */
+        // DATOS DE PRODUCTO - ACTUALIZADOS A nombres de archivo simples
         const products = [
-            { id: 1, name: "Bravio Vaquero Bordado", category: "Vaquero", price: 1250, desc: "Este modelo presenta un bordado de alta densidad sobre piel de res genuina de primera.", img: "img/1.jpg" },
-            { id: 2, name: "Bravio Ejecutivo Black", category: "Formal", price: 850, desc: "Minimalismo y distinción. Piel de grano entero con hebilla de níquel cepillado.", img: "img/ejecutivo-negro.jpg" },
-            { id: 3, name: "Bravio Avestruz Brown", category: "Exótico", price: 2800, desc: "Textura característica de avestruz en piel genuina seleccionada.", img: "img/avestruz-cafe.jpg" },
-            { id: 4, name: "Bravio Casual Miel", category: "Formal", price: 690, desc: "Versatilidad diaria. Tono miel natural que desarrolla pátina con el tiempo.", img: "img/casual-miel.jpg" },
-            { id: 5, name: "Bravio Cincelado Tradicional", category: "Vaquero", price: 1450, desc: "Grabado a mano con motivos tradicionales sobre piel de alta resistencia.", img: "img/cincelado.jpg" },
-            { id: 6, name: "Bravio Croco Legacy", category: "Exótico", price: 3500, desc: "Relieve táctil de lujo tipo cocodrilo con acabado en ceras artesanales.", img: "img/cocodrilo-legacy.jpg" },
+            { id: 1, name: "Bravio Vaquero Bordado", category: "Vaquero", price: 1250, desc: "Este modelo presenta un bordado de alta densidad sobre piel de res genuina de primera calidad.", img: "img/1.jpg" },
+            { id: 2, name: "Bravio Ejecutivo Black", category: "Formal", price: 850, desc: "Minimalismo y distinción. Piel de grano entero con hebilla de níquel cepillado.", img: "img/2.jpg" },
+            { id: 3, name: "Bravio Avestruz Brown", category: "Exótico", price: 2800, desc: "Textura característica de avestruz en piel genuina seleccionada para un porte único.", img: "img/3.jpg" },
+            { id: 4, name: "Bravio Casual Miel", category: "Formal", price: 690, desc: "Tono miel natural que desarrolla una pátina única. Ideal para uso diario.", img: "img/4.jpg" },
+            { id: 5, name: "Bravio Cincelado Tradicional", category: "Vaquero", price: 1450, desc: "Grabado a mano con motivos tradicionales sobre piel de alta resistencia.", img: "img/5.jpg" },
+            { id: 6, name: "Bravio Croco Legacy", category: "Exótico", price: 3500, desc: "Relieve táctil de lujo tipo cocodrilo con acabado en ceras artesanales italianas.", img: "img/6.jpg" },
         ];
 
         const homeView = document.getElementById('home-view');
@@ -296,7 +291,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileToggle = document.getElementById('mobile-menu-toggle');
 
-        /* Referencias de validación */
+        /* Elementos de validación */
         const contactForm = document.getElementById('contactForm');
         const emailInput = document.getElementById('emailInput');
         const emailErrorMessage = document.getElementById('emailErrorMessage');
@@ -308,13 +303,17 @@
 
         let currentCategory = 'all';
 
-        /* Validación ajustada */
+        /* Validación Blindada */
         function validateEmail(email) {
             const val = String(email).toLowerCase().trim();
-            const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
             if (!re.test(val)) return { valid: false, msg: "Formato no válido (ej@mail.com)" };
+            const domain = val.split('@')[1];
+            const blacklist = ['hmail', 'gmal', 'gmial', 'hotmal', 'hotmai', 'outlok', 'yahou', 'icloud.con', 'gmail.con'];
+            if (blacklist.some(typo => domain.includes(typo))) {
+                return { valid: false, msg: "Dominio sospechoso o mal escrito" };
+            }
             if (val.endsWith('.con')) return { valid: false, msg: "Revisa la extensión (.com)" };
-            if (val.includes('@gmal.') || val.includes('@gmial.')) return { valid: false, msg: "Revisa la escritura de Gmail" };
             return { valid: true };
         }
 
@@ -327,18 +326,26 @@
                 emailStatusIcon.classList.add('hidden');
                 emailInput.classList.remove('input-error');
                 submitBtn.disabled = true;
-                btnText.innerText = "Enviar Mensaje Seguro";
+                submitBtn.className = "w-full bg-stone-300 text-white font-bold py-5 rounded-2xl transition-all uppercase tracking-[0.2em] flex items-center justify-center gap-2 cursor-not-allowed";
+                btnText.innerText = "Ingresa tu correo";
+                btnIcon.className = "fas fa-lock";
             } else if (!validation.valid) {
                 errorText.innerText = validation.msg;
                 emailErrorMessage.classList.remove('hidden');
                 emailStatusIcon.classList.add('hidden');
                 emailInput.classList.add('input-error');
                 submitBtn.disabled = true;
+                submitBtn.className = "w-full bg-red-100 text-red-500 font-bold py-5 rounded-2xl transition-all uppercase tracking-[0.2em] flex items-center justify-center gap-2 cursor-not-allowed border border-red-200";
+                btnText.innerText = "Datos Inválidos";
+                btnIcon.className = "fas fa-times-circle";
             } else {
                 emailErrorMessage.classList.add('hidden');
                 emailStatusIcon.classList.remove('hidden');
                 emailInput.classList.remove('input-error');
                 submitBtn.disabled = false;
+                submitBtn.className = "w-full bg-amber-900 text-white font-bold py-5 rounded-2xl hover:bg-amber-800 transition-all uppercase tracking-[0.2em] shadow-xl flex items-center justify-center gap-2 group cursor-pointer active:scale-95";
+                btnText.innerText = "Enviar Mensaje Seguro";
+                btnIcon.className = "fas fa-paper-plane";
             }
         }
 
@@ -356,34 +363,7 @@
             }
         });
 
-        /* Funciones de navegación */
-        function showView(viewName, productId = null) {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            if (viewName === 'home') {
-                detailView.classList.add('view-hidden');
-                homeView.classList.remove('view-hidden');
-            } else if (viewName === 'detail' && productId) {
-                const product = products.find(p => p.id === productId);
-                if (product) {
-                    document.getElementById('detail-img').src = product.img;
-                    // Fallback si la imagen local no existe aún
-                    document.getElementById('detail-img').onerror = function() {
-                        this.src = 'https://images.unsplash.com/photo-1549439602-43ebcb2327af?auto=format&fit=crop&w=800&q=80';
-                    };
-                    document.getElementById('detail-name').innerText = product.name;
-                    document.getElementById('detail-category').innerText = product.category;
-                    document.getElementById('detail-price').innerText = `$${product.price.toLocaleString()}`;
-                    document.getElementById('detail-desc').innerText = product.desc;
-                    document.getElementById('whatsapp-link').href = `https://wa.me/523334821147?text=Hola Bravio! Me interesa el modelo ${product.name} que vi en su catálogo web.`;
-                    homeView.classList.add('view-hidden');
-                    detailView.classList.remove('view-hidden');
-                }
-            }
-        }
-
-        mobileToggle.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-        function toggleMobileMenu() { mobileMenu.classList.add('hidden'); }
-
+        // RENDERIZADO DEL CATÁLOGO
         function renderProducts(filterText = '') {
             const filtered = products.filter(p => {
                 const matchesSearch = p.name.toLowerCase().includes(filterText.toLowerCase()) || 
@@ -393,6 +373,7 @@
             });
 
             productGrid.innerHTML = '';
+            
             if (filtered.length === 0) {
                 noResults.classList.remove('hidden');
             } else {
@@ -400,9 +381,9 @@
                 filtered.forEach(p => {
                     productGrid.innerHTML += `
                         <div class="product-card bg-white rounded-[2rem] shadow-sm border border-stone-100 overflow-hidden group flex flex-col cursor-pointer h-full" onclick="showView('detail', ${p.id})">
-                            <div class="h-64 overflow-hidden relative">
+                            <div class="h-64 overflow-hidden relative bg-stone-200">
                                 <img src="${p.img}" 
-                                     onerror="this.src='https://images.unsplash.com/photo-1624222247344-550fb8ecf7c4?auto=format&fit=crop&w=800&q=80'"
+                                     onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1624222247344-550fb8ecf7c4?auto=format&fit=crop&w=800&q=80'"
                                      alt="${p.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
                                 <span class="absolute top-4 right-4 bg-amber-900 text-white text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-widest">${p.category}</span>
                             </div>
@@ -420,6 +401,36 @@
             }
         }
 
+        // SISTEMA DE VISTAS
+        function showView(viewName, productId = null) {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (viewName === 'home') {
+                detailView.classList.add('view-hidden');
+                homeView.classList.remove('view-hidden');
+            } else if (viewName === 'detail' && productId) {
+                const product = products.find(p => p.id === productId);
+                if (product) {
+                    const dImg = document.getElementById('detail-img');
+                    dImg.src = product.img;
+                    dImg.onerror = function() {
+                        this.onerror = null;
+                        this.src = 'https://images.unsplash.com/photo-1549439602-43ebcb2327af?auto=format&fit=crop&w=800&q=80';
+                    };
+                    document.getElementById('detail-name').innerText = product.name;
+                    document.getElementById('detail-category').innerText = product.category;
+                    document.getElementById('detail-price').innerText = `$${product.price.toLocaleString()}`;
+                    document.getElementById('detail-desc').innerText = product.desc;
+                    document.getElementById('whatsapp-link').href = `https://wa.me/523334821147?text=Hola Bravio! Me interesa el modelo ${product.name} que vi en su catálogo web.`;
+                    
+                    homeView.classList.add('view-hidden');
+                    detailView.classList.remove('view-hidden');
+                }
+            }
+        }
+
+        // GESTIÓN DE FILTROS Y BÚSQUEDA
+        searchInput.addEventListener('input', (e) => renderProducts(e.target.value));
+
         filterButtons.forEach(btn => {
             btn.addEventListener('click', () => {
                 filterButtons.forEach(b => {
@@ -433,8 +444,19 @@
             });
         });
 
-        searchInput.addEventListener('input', (e) => renderProducts(e.target.value));
-        window.onload = () => renderProducts();
+        document.getElementById('mobile-menu-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        function toggleMobileMenu() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        }
+
+        // INICIALIZACIÓN RÁPIDA
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("Catálogo Bravio Inicializado.");
+            renderProducts();
+        });
     </script>
 </body>
 </html>
