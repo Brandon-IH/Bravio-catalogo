@@ -120,14 +120,14 @@
                     <img src="https://images.unsplash.com/photo-1598251266014-934d40e1b20c?auto=format&fit=crop&w=800&q=80" 
                          alt="Proceso artesanal Bravio" class="rounded-[2.5rem] shadow-2xl object-cover h-[500px] w-full">
                     <div class="absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-2xl hidden lg:block border border-stone-100 text-center">
-                        <p class="text-amber-900 font-bold text-2xl font-serif italic uppercase leading-none">Bravio</p>
-                        <p class="text-stone-500 text-[10px] tracking-widest uppercase mt-2">Piel de Calidad</p>
+                        <p class="text-amber-900 font-bold text-2xl font-serif italic uppercase leading-none text-center">Bravio</p>
+                        <p class="text-stone-500 text-[10px] tracking-widest uppercase mt-2 text-center">Piel de Calidad</p>
                     </div>
                 </div>
                 <div>
                     <h2 class="text-4xl font-bold mb-8 text-stone-900 leading-tight">Resistencia y Tradición</h2>
                     <p class="text-stone-600 text-lg leading-relaxed mb-8">
-                        Nuestra marca nace del respeto por la marroquinería clásica, fusionando diseños audaces con la durabilidad de la piel auténtica trabajada a mano.
+                        Nuestra marca nace del respeto por la marroquinería clásica, fusionando diseños audaces con la durabilidad de la piel auténtica trabajada a mano. Cada pieza es única y cuenta una historia de esfuerzo y dedicación.
                     </p>
                     <div class="grid grid-cols-2 gap-8">
                         <div class="p-6 bg-amber-50 rounded-3xl border border-amber-100/50">
@@ -175,13 +175,13 @@
             </div>
         </section>
 
-        <!-- Contacto con Blindaje Antibasura -->
+        <!-- Contacto Simplificado y Funcional -->
         <section id="contacto" class="py-28 px-4 max-w-7xl mx-auto">
             <div class="bg-white rounded-[3rem] shadow-2xl overflow-hidden grid lg:grid-cols-5 border border-stone-100">
                 <div class="lg:col-span-2 bg-amber-900 p-12 text-white flex flex-col justify-between">
                     <div>
                         <h3 class="text-4xl font-bold mb-8 font-serif italic">Hablemos de Piel</h3>
-                        <p class="mb-10 text-amber-100 leading-relaxed">¿Dudas o pedidos especiales? Envíanos un correo legítimo y nos pondremos en contacto.</p>
+                        <p class="mb-10 text-amber-100 leading-relaxed">¿Dudas o pedidos especiales? Envíanos un correo y nos pondremos en contacto.</p>
                         <ul class="space-y-8">
                             <li class="flex items-center gap-5"><i class="fas fa-phone text-amber-400"></i> +52 33 3482 1147</li>
                             <li class="flex items-center gap-4"><i class="fas fa-envelope text-amber-400"></i> contacto@bravio.com</li>
@@ -194,7 +194,7 @@
                         <div class="grid md:grid-cols-2 gap-8">
                             <div class="space-y-2">
                                 <label class="text-xs font-bold uppercase tracking-widest text-stone-400 ml-1">Nombre Completo</label>
-                                <input type="text" name="nombre" id="nombreInput" required placeholder="Tu nombre" class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 transition-all">
+                                <input type="text" name="nombre" required placeholder="Tu nombre" class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 transition-all">
                             </div>
                             <div class="space-y-2">
                                 <label class="text-xs font-bold uppercase tracking-widest text-stone-400 ml-1">Correo Electrónico</label>
@@ -216,9 +216,9 @@
                             <label class="text-xs font-bold uppercase tracking-widest text-stone-400 ml-1">¿En qué podemos ayudarte?</label>
                             <textarea name="mensaje" id="mensajeInput" rows="5" required placeholder="Describe tu consulta..." class="w-full px-6 py-4 bg-stone-50 border border-stone-200 rounded-2xl outline-none focus:ring-2 focus:ring-amber-600 resize-none transition-all"></textarea>
                         </div>
-                        <button type="submit" id="submitBtn" disabled class="w-full bg-stone-300 text-white font-bold py-5 rounded-2xl transition-all uppercase tracking-[0.2em] shadow-none flex items-center justify-center gap-2 group cursor-not-allowed">
-                            <span id="btnText">Ingresa datos reales...</span>
-                            <i id="btnIcon" class="fas fa-lock"></i>
+                        <button type="submit" id="submitBtn" class="w-full bg-amber-900 text-white font-bold py-5 rounded-2xl hover:bg-amber-800 transition-all uppercase tracking-[0.2em] shadow-xl flex items-center justify-center gap-2 group active:scale-95 disabled:bg-stone-300 disabled:cursor-not-allowed">
+                            <span id="btnText">Enviar Mensaje Seguro</span>
+                            <i id="btnIcon" class="fas fa-paper-plane group-hover:translate-x-1 transition-transform"></i>
                         </button>
                     </form>
                 </div>
@@ -272,11 +272,11 @@
 
     <script>
         const products = [
-            { id: 1, name: "Bravio Vaquero Bordado", category: "Vaquero", price: 1250, desc: "Bordado artesanal de alta densidad sobre piel de res genuina tratada con aceites naturales.", img: "https://images.unsplash.com/photo-1624222247344-550fb8ecf7c4?auto=format&fit=crop&w=800&q=80" },
-            { id: 2, name: "Bravio Ejecutivo Black", category: "Formal", price: 850, desc: "Elegancia minimalista. Piel de grano entero con acabado premium y hebilla de perfil bajo.", img: "https://images.unsplash.com/photo-1549439602-43ebcb2327af?auto=format&fit=crop&w=800&q=80" },
-            { id: 3, name: "Bravio Avestruz Brown", category: "Exótico", price: 2800, desc: "Pattern de avestruz seleccionado sobre piel de primera calidad para una textura inigualable.", img: "https://images.unsplash.com/photo-1590673885210-1df1632344a8?auto=format&fit=crop&w=800&q=80" },
-            { id: 4, name: "Bravio Casual Miel", category: "Formal", price: 690, desc: "Tono miel natural, versátil y duradero. Desarrolla una pátina única con el uso.", img: "https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?auto=format&fit=crop&w=800&q=80" },
-            { id: 5, name: "Bravio Cincelado", category: "Vaquero", price: 1450, desc: "Grabado profundo a mano con motivos tradicionales del campo mexicano.", img: "https://images.unsplash.com/photo-1614165933396-981888062822?auto=format&fit=crop&w=800&q=80" },
+            { id: 1, name: "Bravio Vaquero Bordado", category: "Vaquero", price: 1250, desc: "Bordado artesanal de alta densidad sobre piel de res genuina de primera.", img: "https://images.unsplash.com/photo-1624222247344-550fb8ecf7c4?auto=format&fit=crop&w=800&q=80" },
+            { id: 2, name: "Bravio Ejecutivo Black", category: "Formal", price: 850, desc: "Minimalismo y distinción. Piel de grano entero con hebilla de níquel cepillado.", img: "https://images.unsplash.com/photo-1549439602-43ebcb2327af?auto=format&fit=crop&w=800&q=80" },
+            { id: 3, name: "Bravio Avestruz Brown", category: "Exótico", price: 2800, desc: "Textura característica de avestruz en piel genuina seleccionada.", img: "https://images.unsplash.com/photo-1590673885210-1df1632344a8?auto=format&fit=crop&w=800&q=80" },
+            { id: 4, name: "Bravio Casual Miel", category: "Formal", price: 690, desc: "Versatilidad diaria. Tono miel natural que desarrolla pátina con el tiempo.", img: "https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?auto=format&fit=crop&w=800&q=80" },
+            { id: 5, name: "Bravio Cincelado", category: "Vaquero", price: 1450, desc: "Grabado a mano con motivos tradicionales sobre piel de alta resistencia.", img: "https://images.unsplash.com/photo-1614165933396-981888062822?auto=format&fit=crop&w=800&q=80" },
             { id: 6, name: "Bravio Croco Legacy", category: "Exótico", price: 3500, desc: "Relieve táctil de lujo tipo cocodrilo con acabado en ceras artesanales.", img: "https://images.unsplash.com/photo-1554412933-514a83d2f3c8?auto=format&fit=crop&w=800&q=80" },
         ];
 
@@ -289,7 +289,7 @@
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileToggle = document.getElementById('mobile-menu-toggle');
 
-        /* Elementos de validación */
+        /* Referencias de validación */
         const contactForm = document.getElementById('contactForm');
         const emailInput = document.getElementById('emailInput');
         const emailErrorMessage = document.getElementById('emailErrorMessage');
@@ -301,50 +301,17 @@
 
         let currentCategory = 'all';
 
-        /* Función para detectar Gibberish (Letras aleatorias) */
-        function isGibberish(str) {
-            if (str.length < 4) return false;
-            
-            const vowels = (str.match(/[aeiou]/gi) || []).length;
-            const consonants = (str.match(/[bcdfghjklmnpqrstvwxyz]/gi) || []).length;
-            const ratio = vowels / (str.length || 1);
-
-            // Si no tiene vocales o demasiadas consonantes seguidas, es probable que sea basura
-            const hasTooManyConsonants = /[^aeiou]{5,}/i.test(str);
-            const hasTooManyVowels = /[aeiou]{5,}/i.test(str);
-            const isTooRandom = (ratio < 0.1 || ratio > 0.8) && str.length > 6;
-
-            return hasTooManyConsonants || hasTooManyVowels || isTooRandom;
-        }
-
-        /* Lógica de Validación Blindada */
+        /* Función de Validación Ajustada */
         function validateEmail(email) {
             const val = String(email).toLowerCase().trim();
             
-            // 1. Regex de formato estándar muy estricto
-            // Exige extensiones de 2 a 4 letras reales (ej .com, .mx, .net)
-            const re = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+            // Regex estándar profesional: permite múltiples subdominios (.com.mx)
+            const re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
             if (!re.test(val)) return { valid: false, msg: "Formato no válido (ej@mail.com)" };
 
-            const parts = val.split('@');
-            const username = parts[0];
-            const domain = parts[1];
-
-            // 2. Lista Negra de dominios mal escritos o falsos comunes
-            const blacklist = [
-                'hmail', 'gmal', 'hotmal', 'outlok', 'yahou', 'yahu', 
-                'icloud.con', 'gmail.con', 'live.con', 'tempmail', 'asdf', 'test', 'example'
-            ];
-            if (blacklist.some(item => domain.includes(item))) {
-                return { valid: false, msg: `Dominio sospechoso detectado (${domain})` };
-            }
-
-            // 3. Detección de Basura (Teclazo aleatorio)
-            if (isGibberish(username)) return { valid: false, msg: "Nombre de usuario parece aleatorio" };
-            if (isGibberish(domain.split('.')[0])) return { valid: false, msg: "Dominio parece ser falso" };
-
-            // 4. Nombre muy corto
-            if (username.length < 3) return { valid: false, msg: "Nombre de usuario muy corto" };
+            // Bloquear solo errores de dedo críticos (.con, .gmial, etc)
+            if (val.endsWith('.con')) return { valid: false, msg: "Revisa la extensión (.com)" };
+            if (val.includes('@gmal.') || val.includes('@gmial.')) return { valid: false, msg: "Revisa la escritura de Gmail" };
 
             return { valid: true };
         }
@@ -358,26 +325,18 @@
                 emailStatusIcon.classList.add('hidden');
                 emailInput.classList.remove('input-error');
                 submitBtn.disabled = true;
-                submitBtn.className = "w-full bg-stone-300 text-white font-bold py-5 rounded-2xl transition-all uppercase tracking-[0.2em] cursor-not-allowed flex items-center justify-center gap-2";
-                btnText.innerText = "Ingresa tu correo";
-                btnIcon.className = "fas fa-lock";
+                btnText.innerText = "Enviar Mensaje Seguro";
             } else if (!validation.valid) {
                 errorText.innerText = validation.msg;
                 emailErrorMessage.classList.remove('hidden');
                 emailStatusIcon.classList.add('hidden');
                 emailInput.classList.add('input-error');
                 submitBtn.disabled = true;
-                submitBtn.className = "w-full bg-red-100 text-red-500 font-bold py-5 rounded-2xl transition-all uppercase tracking-[0.2em] cursor-not-allowed border border-red-200 flex items-center justify-center gap-2";
-                btnIcon.className = "fas fa-times-circle";
-                btnText.innerText = "Correo No Válido";
             } else {
                 emailErrorMessage.classList.add('hidden');
                 emailStatusIcon.classList.remove('hidden');
                 emailInput.classList.remove('input-error');
                 submitBtn.disabled = false;
-                submitBtn.className = "w-full bg-amber-900 text-white font-bold py-5 rounded-2xl hover:bg-amber-800 transition-all uppercase tracking-[0.2em] shadow-xl flex items-center justify-center gap-2 group cursor-pointer active:scale-95";
-                btnIcon.className = "fas fa-check-circle";
-                btnText.innerText = "Enviar Mensaje Seguro";
             }
         }
 
@@ -395,7 +354,7 @@
             }
         });
 
-        /* Funciones de navegación y catálogo */
+        /* Funciones de navegación */
         function showView(viewName, productId = null) {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             if (viewName === 'home') {
